@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de Pago</title>
+</head>
+<body>
+<h1>Página de Pago</h1>
+<p id="message">Pago exitoso</p>
+<form action="/payment" method="post">
+    <label for="cardNumber">Número de Tarjeta:</label>
+    <input type="text" id="cardNumber" name="cardNumber">
+    <br>
+    <label for="cardHolder">Nombre del Titular:</label>
+    <input type="text" id="cardHolder" name="cardHolder">
+    <br>
+    <label for="expirationDate">Fecha de Expiración:</label>
+    <input type="text" id="expirationDate" name="expirationDate">
+    <br>
+    <label for="cvv">CVV:</label>
+    <input type="text" id="cvv" name="cvv">
+    <br>
+    <button id="confirmButton" type="submit">Confirmar Pago</button>
+</form>
+<br>
+<p id="message_payment">${message_payment}</p>
+<br>
+<a href="/cart">Regresar al Carrito</a>
+<br>
+<button id="retryButton" onclick="retryPayment()">Intentar Pago Nuevamente</button>
+
+<script>
+    function retryPayment() {
+        document.getElementById('cardNumber').value = '';
+        document.getElementById('cardHolder').value = '';
+        document.getElementById('expirationDate').value = '';
+        document.getElementById('cvv').value = '';
+    }
+</script>
+</body>
+</html>
