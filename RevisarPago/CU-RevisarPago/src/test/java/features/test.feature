@@ -1,4 +1,4 @@
-Feature: Revisar y confirmar pago de compra
+Feature: Revisar pago
 
   @test
   Scenario: El cajero revisa y confirma el pago exitosamente
