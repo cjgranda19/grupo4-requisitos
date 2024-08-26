@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Revisión de Pago</title>
+</head>
+<body>
+<h1>Revisión de Pago</h1>
+<form th:action="@{/confirmar_pago}" method="post">
+    <button type="submit">Confirmar Pago</button>
+</form>
+
+<div th:if="${pagoConfirmado}">
+    <p>La compra ha sido confirmada.</p>
+    <p>Notificación enviada al cajero.</p>
+</div>
+</body>
+</html>
