@@ -195,7 +195,7 @@ public class test {
         }
     }
 
-    @Then("El administrador procede a gestionar nuevamente corrigiendo errores")
+    @Then("El sistema notifica al administrador sobre el error en la gestión")
     public void notificar_error_pago(){
         try {
             WebElement message = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("message_payment")));
@@ -213,8 +213,8 @@ public class test {
             WebElement retryButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("retryButton")));
             retryButton.click();
         } catch (Exception e) {
-            logger.error("Error al intentar realizar la gestión de categorías nuevamente", e);
-            Assert.fail("Error al intentar realizar la gestión de categorías nuevamente: " + e.getMessage());
+            logger.error("Error al intentar realizar el pago nuevamente", e);
+            Assert.fail("Error al intentar realizar el pago nuevamente: " + e.getMessage());
         }
     }
 
@@ -239,7 +239,7 @@ public class test {
         }
     }
 
-    @When("El sistema rechaza la gestión de categorías")
+    @When("El sistema rechaza la gestión")
     public void entidad_pago_rechaza_pago(){
         try {
             driver.get("http://localhost:8080/payment?forceError=true");

@@ -29,6 +29,6 @@ Feature: Gestionar Categorías
     And Las categorías están disponibles
     When El administrador procede a gestionar categorías
     And El sistema rechaza la gestión de categorías
-    Then El sistema notifica al cliente sobre el error en la gestión
-    When El administrador procede a gestionar nuevamente corrigiendo errores
+    Then El sistema rechaza la gestión
+    When El sistema notifica al administrador sobre el error en la gestión
     And El administrador puede intentar realizar la gestión de categorías nuevamente
