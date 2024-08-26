@@ -175,7 +175,7 @@ public class test {
     public void notificar_falta_disponibilidad(){
         try {
             driver.get("http://localhost:8080/cart");
-            WebElement message = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
+            WebElement message = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("message_cart")));
             Assert.assertTrue("El mensaje no contiene 'No hay disponibilidad'", message.getText().contains("No hay disponibilidad"));
         } catch (Exception e) {
             logger.error("Error al notificar la falta de disponibilidad", e);

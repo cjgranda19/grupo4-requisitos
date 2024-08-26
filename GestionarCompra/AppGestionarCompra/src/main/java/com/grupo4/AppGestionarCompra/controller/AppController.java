@@ -46,9 +46,17 @@ public class AppController {
 
     @GetMapping("/cart")
     public String showCartPage(Model model) {
-        // Aquí podrías implementar lógica para verificar la disponibilidad real de los productos
-        model.addAttribute("message_cart", model.asMap().getOrDefault("message_cart", ""));
+        boolean productUnavailable = true; // Simula un producto no disponible
+
+        if (productUnavailable) {
+            model.addAttribute("message_cart", "No hay disponibilidad");
+        } else {
+            model.addAttribute("message_cart", "");
+        }
         return "cart";
+        // Aquí podrías implementar lógica para verificar la disponibilidad real de los productos
+        //model.addAttribute("message_cart", model.asMap().getOrDefault("message_cart", ""));
+        //return "cart";
     }
 
     @PostMapping("/cart")
