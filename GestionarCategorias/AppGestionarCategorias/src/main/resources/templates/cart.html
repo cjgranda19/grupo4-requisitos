@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Carrito de Compras</title>
+</head>
+<body>
+<h1>Página del Carrito de Compras</h1>
+<p id="product1">Producto 1: <span id="availability1" onclick="toggleAvailability(this)">Disponible</span></p>
+<p id="product2">Producto 2: <span id="availability2" onclick="toggleAvailability(this)">Disponible</span></p>
+<p id="product3">Producto 3: <span id="availability3" onclick="toggleAvailability(this)">Disponible</span></p>
+
+<script>
+    function toggleAvailability(element) {
+        element.textContent = element.textContent === "Disponible" ? "No Disponible" : "Disponible";
+    }
+</script>
+<form action="/payment" method="get">
+    <button id="payButton" type="submit">Proceder al Pago</button>
+</form>
+<br>
+<p id="message" th:text="${message_cart}"></p>
+<p id="message_cart" th:text="${message_cart}"></p>
+<br>
+<a href="/products">Seguir Comprando</a>
+<br>
+<button id="updateButton">Actualizar Carrito</button>
+</body>
+
+</html>
