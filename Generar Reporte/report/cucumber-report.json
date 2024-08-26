@@ -1,0 +1,502 @@
+[
+  {
+    "description": "  Como un cliente del sistema web de \"La Italiana\"\n  Quiero buscar productos\n  Para encontrar productos específicos utilizando términos de búsqueda o categorías",
+    "elements": [
+      {
+        "description": "",
+        "id": "buscar-productos;búsqueda-de-productos-por-término",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Búsqueda de productos por término",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "El cliente está en la página de búsqueda de productos",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 888000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "El cliente ingresa un término de búsqueda válido",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 410999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "El cliente inicia la búsqueda",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 312800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "El sistema muestra una lista de productos que coinciden con el término de búsqueda",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 269000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "buscar-productos;búsqueda-de-productos-por-categoría",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Búsqueda de productos por categoría",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "El cliente está en la página de búsqueda de productos",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 308599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "El cliente selecciona una categoría válida",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 284699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "El cliente inicia la búsqueda",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 232800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "El sistema muestra una lista de productos que pertenecen a la categoría seleccionada",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 406100
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "buscar-productos;búsqueda-sin-resultados",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Búsqueda sin resultados",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "El cliente está en la página de búsqueda de productos",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 669300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "El cliente ingresa un término de búsqueda que no tiene coincidencias",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 302699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "El cliente inicia la búsqueda",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 182199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "El sistema muestra un mensaje indicando que no se encontraron productos",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 168599
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "buscar-productos;búsqueda-con-categoría-inexistente",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Búsqueda con categoría inexistente",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "El cliente está en la página de búsqueda de productos",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 133000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "El cliente selecciona una categoría inexistente",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 126999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "El sistema muestra un mensaje de error indicando que la categoría no es válida",
+            "match": {
+              "location": "features\\step_definitions\\buscar_productos.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 132099
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "buscar-productos",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Buscar productos",
+    "tags": [],
+    "uri": "features\\buscar_productos.feature"
+  },
+  {
+    "description": "  Como un administrador del sistema web de \"La Italiana\"\n  Quiero generar reportes de ventas\n  Para analizar las ventas diarias, mensuales o anuales",
+    "elements": [
+      {
+        "description": "",
+        "id": "generar-reportes;generar-reporte-diario",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Generar reporte diario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "El administrador ha iniciado sesión en el sistema",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 145099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "El administrador selecciona la opción de generar un reporte diario",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 186800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "El administrador especifica una fecha válida con datos",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 133600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "El sistema genera y muestra el reporte de ventas diarias",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 141600
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "generar-reportes;generar-reporte-mensual",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Generar reporte mensual",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "El administrador ha iniciado sesión en el sistema",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 135599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "El administrador selecciona la opción de generar un reporte mensual",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 147699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "El administrador selecciona un mes y año válidos con datos",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 136700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "El sistema genera y muestra el reporte de ventas mensuales",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 132799
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "generar-reportes;generar-reporte-anual",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Generar reporte anual",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "El administrador ha iniciado sesión en el sistema",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 110600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "El administrador selecciona la opción de generar un reporte anual",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 171500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "El administrador especifica un año válido con datos",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 208099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "El sistema genera y muestra el reporte de ventas anuales",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 219500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "generar-reportes;generar-reporte-sin-datos",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Generar reporte sin datos",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "El administrador ha iniciado sesión en el sistema",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 164899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "El administrador selecciona un rango de fechas sin datos de ventas",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 185899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "El sistema muestra un mensaje indicando que no hay datos para el rango seleccionado",
+            "match": {
+              "location": "features\\step_definitions\\generar_reporte.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 195500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "generar-reportes",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Generar reportes",
+    "tags": [],
+    "uri": "features\\generar_reporte.feature"
+  }
+]

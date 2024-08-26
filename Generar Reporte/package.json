@@ -1,0 +1,18 @@
+{
+  "name": "generar-reporte",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "9.6.0",
+    "@cucumber/pretty-formatter": "^1.0.1",
+    "chromedriver": "latest",
+    "selenium-webdriver": "latest"
+  }
+}
