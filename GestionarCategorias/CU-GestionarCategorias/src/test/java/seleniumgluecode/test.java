@@ -258,7 +258,7 @@ public class test {
 
             // Esperar a que el mensaje de error de pago aparezca
             WebElement message = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("message_payment")));
-            Assert.assertTrue("El mensaje no contiene 'Error en la gestión'", message.getText().contains("Error en la gestión"));
+            Assert.assertTrue("El mensaje no contiene 'Error en la gestión'", message.getText().contains("Error en el pago"));
         } catch (Exception e) {
             logger.error("Error al rechazar la gestión", e);
             Assert.fail("Error al rechazar la gestión: " + e.getMessage());
