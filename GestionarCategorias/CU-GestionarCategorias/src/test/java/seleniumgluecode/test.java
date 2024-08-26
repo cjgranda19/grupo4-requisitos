@@ -76,7 +76,7 @@ public class test {
         }
     }
 
-    @When("El administrador procede a revisar categorías creadas")
+    @When("El administrador procede a gestionar categorías")
     public void cliente_procede_a_pagar(){
         try {
             driver.get("http://localhost:8080/cart");
@@ -206,7 +206,7 @@ public class test {
         }
     }
 
-    @Then("El administrador procede a gestionar nuevamente corrigiendo errores")
+    @Then("El administrador puede intentar realizar la gestión de categorías nuevamente")
     public void cliente_intenta_pago_nuevamente(){
         try {
             driver.get("http://localhost:8080/payment");
@@ -218,7 +218,7 @@ public class test {
         }
     }
 
-    @Given("Una categoría no está disponible")
+    @Given("Una categoría está no está disponible")
     public void producto_no_disponible_en_inventario(){
         try {
             driver.get("http://localhost:8080/cart");
