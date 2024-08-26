@@ -206,7 +206,7 @@ public class test {
         }
     }
 
-    @Then("El administrador puede intentar realizar la gestión de productos nuevamente")
+    @Then("El administrador procede a gestionar nuevamente corrigiendo errores")
     public void cliente_intenta_pago_nuevamente(){
         try {
             driver.get("http://localhost:8080/payment");

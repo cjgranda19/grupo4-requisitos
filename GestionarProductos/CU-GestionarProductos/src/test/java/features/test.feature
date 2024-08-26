@@ -31,4 +31,3 @@ Feature: Gestionar productos
     And El sistema rechaza la gestión de productos
     Then El sistema notifica al cliente sobre el error en la gestión
     When El administrador procede a gestionar nuevamente corrigiendo errores
-    And El administrador puede intentar realizar la gestión de productos nuevamente
