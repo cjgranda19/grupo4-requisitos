@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/java/features",
         glue = ("seleniumgluecode"),
         tags = "@test",
-        plugin = {"pretty", "html:target/cucumber-reports"}
+        plugin = {"pretty", "html:target/cucumber-reports", "json:target/cucumber.json"}
 )
 
 public class testRunner {

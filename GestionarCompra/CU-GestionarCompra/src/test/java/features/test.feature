@@ -18,7 +18,7 @@ Feature: Gestionar Compra
     Given El cliente ha iniciado sesión en la página web
     And El cliente ha agregado productos al carrito de compras
     And Un producto en el carrito no está disponible en inventario
-    When El cliente procede a pagar
+    When El cliente procede a pagar con tarjeta de crédito
     Then El sistema notifica al cliente sobre la falta de disponibilidad
     And El cliente puede actualizar su carrito de compras
 

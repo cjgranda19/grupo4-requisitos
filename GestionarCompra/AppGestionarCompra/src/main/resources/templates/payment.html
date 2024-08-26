@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Página de Pago</title>
 </head>
 <body>
 <h1>Página de Pago</h1>
-<p id="message">Pago exitoso</p>
+<p id="message" th:text="${message_payment}"></p>
 <form action="/payment" method="post">
     <label for="cardNumber">Número de Tarjeta:</label>
     <input type="text" id="cardNumber" name="cardNumber">
@@ -22,7 +22,8 @@
     <button id="confirmButton" type="submit">Confirmar Pago</button>
 </form>
 <br>
-<p id="message_payment">${message_payment}</p>
+<p id="message_payment" th:text="${message_payment}"></p>
+<p id="message_cart" th:text="${message_cart}"></p>
 <br>
 <a href="/cart">Regresar al Carrito</a>
 <br>

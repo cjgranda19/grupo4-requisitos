@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Carrito de Compras</title>
 </head>
@@ -18,7 +18,8 @@
     <button id="payButton" type="submit">Proceder al Pago</button>
 </form>
 <br>
-<p id="message_cart">${message_cart}</p>
+<p id="message" th:text="${message_cart}"></p>
+<p id="message_cart" th:text="${message_cart}"></p>
 <br>
 <a href="/products">Seguir Comprando</a>
 <br>

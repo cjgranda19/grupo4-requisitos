@@ -90,7 +90,7 @@ public class test {
             WebElement expirationDate = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("expirationDate")));
             WebElement cvv = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cvv")));
 
-            cardNumber.sendKeys("1234567890123456");
+            cardNumber.sendKeys("123456789");
             cardHolder.sendKeys("Cliente");
             expirationDate.sendKeys("12/23");
             cvv.sendKeys("123");
@@ -104,10 +104,24 @@ public class test {
     }
 
     @Then("La entidad de pago procesa el pago con éxito")
-    public void verificar_pago_exitoso(){
+    public void verificar_pago_exitoso() {
         try {
-            driver.get("http://localhost:8080/payment");
-            WebElement message = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
+            driver.get("http://localhost:8080/payment?cardNumber=123456789");
+            WebElement cardNumber = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cardNumber")));
+            WebElement cardHolder = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cardHolder")));
+            WebElement expirationDate = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("expirationDate")));
+            WebElement cvv = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cvv")));
+
+            cardNumber.sendKeys("123456789");
+            cardHolder.sendKeys("Cliente");
+            expirationDate.sendKeys("12/23");
+            cvv.sendKeys("123");
+
+            WebElement confirmButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("confirmButton")));
+            confirmButton.click();
+
+            // Esperar a que el mensaje de éxito de pago aparezca
+            WebElement message = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("message_payment")));
             Assert.assertTrue("El mensaje no contiene 'Pago exitoso'", message.getText().contains("Pago exitoso"));
         } catch (Exception e) {
             logger.error("Error al verificar el pago exitoso", e);
@@ -135,7 +149,20 @@ public class test {
     @Then("El sistema notifica al cliente sobre el estado exitoso del pedido")
     public void notificar_estado_exitoso(){
         try {
-            driver.get("http://localhost:8080/cart");
+            driver.get("http://localhost:8080/payment");
+            WebElement cardNumber = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cardNumber")));
+            WebElement cardHolder = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cardHolder")));
+            WebElement expirationDate = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("expirationDate")));
+            WebElement cvv = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cvv")));
+
+            cardNumber.sendKeys("123456789");
+            cardHolder.sendKeys("Cliente");
+            expirationDate.sendKeys("12/23");
+            cvv.sendKeys("123");
+
+            WebElement confirmButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("confirmButton")));
+            confirmButton.click();
+
             WebElement message = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("message_cart")));
             Assert.assertTrue("El mensaje no contiene 'Pedido exitoso'", message.getText().contains("Pedido exitoso"));
         } catch (Exception e) {
@@ -215,7 +242,7 @@ public class test {
     @When("La entidad de pago rechaza el pago")
     public void entidad_pago_rechaza_pago(){
         try {
-            driver.get("http://localhost:8080/payment");
+            driver.get("http://localhost:8080/payment?forceError=true");
             WebElement cardNumber = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cardNumber")));
             WebElement cardHolder = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cardHolder")));
             WebElement expirationDate = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("expirationDate")));
@@ -228,21 +255,13 @@ public class test {
 
             WebElement confirmButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("confirmButton")));
             confirmButton.click();
+
+            // Esperar a que el mensaje de error de pago aparezca
+            WebElement message = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("message_payment")));
+            Assert.assertTrue("El mensaje no contiene 'Error en el pago'", message.getText().contains("Error en el pago"));
         } catch (Exception e) {
             logger.error("Error al rechazar el pago", e);
             Assert.fail("Error al rechazar el pago: " + e.getMessage());
-        }
-    }
-
-    @When("El cliente procede a pagar")
-    public void cliente_procede_pago(){
-        try {
-            driver.get("http://localhost:8080/cart");
-            WebElement payButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("payButton")));
-            payButton.click();
-        } catch (Exception e) {
-            logger.error("Error al proceder al pago", e);
-            Assert.fail("Error al proceder al pago: " + e.getMessage());
         }
     }
 
