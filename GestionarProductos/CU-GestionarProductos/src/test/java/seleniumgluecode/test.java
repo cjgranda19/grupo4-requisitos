@@ -195,7 +195,7 @@ public class test {
         }
     }
 
-    @Then("El administrador procede a gestionar nuevamente corrigiendo errores")
+    @Then("El sistema notifica al cliente sobre el error en la gestión")
     public void notificar_error_pago(){
         try {
             WebElement message = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("message_payment")));
